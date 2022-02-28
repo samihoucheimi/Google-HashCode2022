@@ -59,7 +59,6 @@ completed_projects_contributors = {}
 # projects['project_1'] = Project('project_1', 1, 1, 1)
 # projects['project_2'] =Project('project_2', 1, 1, 1)
 # completed_projects = ['project_1', 'project_2']
-# completed_projects_contributors = {'project_2' : ['sami', 'farid', 'not sami'] , 'project_1' : ['sami']}
 
 current_file = 'd_dense_schedule'
 with open("Desktop/ghc/{}.in.txt".format(current_file), "r") as input:
@@ -154,7 +153,9 @@ with open('solution_{}.txt'.format(current_file), 'w') as f:
                 f.write(' ')
             f.write(completed_projects_contributors[projects[project].name][i])
         f.write('\n')
-        
+
+
+# @TODO: Write a function that attributes a skilled contributor to the given project.       
 def find_skilled_contributors(project):
     
     list_of_contributors = {}
@@ -190,7 +191,7 @@ score = 0
 
 while True:
 
-    ranking = rank_project(t, projects)
+    ranking = rank_projects(t, projects)
     for project_name in ranking:
         team = [] #list of contributors
         
